@@ -17,6 +17,7 @@
 [![Unit Tests](https://img.shields.io/badge/Vitest-111%2F111_Passed-22C55E?style=flat-square&logo=vitest&logoColor=white)](#testing--verification)
 [![E2E Tests](https://img.shields.io/badge/Playwright_E2E-70%2F70_Passed-2EAD33?style=flat-square&logo=playwright&logoColor=white)](#testing--verification)
 [![Localization](https://img.shields.io/badge/i18n-TR_%7C_EN-F59E0B?style=flat-square)](#key-features-3-stage-workflow)
+[![License: MIT](https://img.shields.io/badge/License-MIT-3B82F6?style=flat-square)](LICENSE)
 
 </div>
 
@@ -127,6 +128,12 @@ npm test
 # Run Playwright end-to-end browser test suite (70 E2E tests with zero-console-error harness)
 npm run test:e2e
 ```
+
+---
+
+## 📄 License & Copyright
+
+The source code is licensed under the [MIT License](LICENSE). All personal content, visuals, and branding remain All Rights Reserved.
 
 ---
 
