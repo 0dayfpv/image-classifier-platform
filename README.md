@@ -1,11 +1,11 @@
 <div align="center">
 
-# 🧠 Görsel Sınıflandırıcı Stüdyosu (Image Classifier Studio)
+# 🧠 Image Classifier Studio
 
-**Tarayıcı Tabanlı, %100 İstemci Taraflı (Serverless) İnteraktif Görsel Sınıflandırma ve Transfer Öğrenme Platformu**
+**Browser-Based, 100% Client-Side (Serverless) Interactive Image Classification & Transfer Learning Platform**
 
-[![Canlı Demo](https://img.shields.io/badge/🚀_Canlı_Demo-ml.hamzafpv.com.tr-4F46E5?style=for-the-badge)](https://ml.hamzafpv.com.tr)
-[![Geliştirici](https://img.shields.io/badge/🌐_Web-hamzafpv.com.tr-0F172A?style=for-the-badge)](https://hamzafpv.com.tr)
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-ml.hamzafpv.com.tr-4F46E5?style=for-the-badge)](https://ml.hamzafpv.com.tr)
+[![Author](https://img.shields.io/badge/🌐_Website-hamzafpv.com.tr-0F172A?style=for-the-badge)](https://hamzafpv.com.tr)
 
 [![React](https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript_5.9-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -13,118 +13,118 @@
 [![TensorFlow.js](https://img.shields.io/badge/TensorFlow.js_4.22-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/js)
 [![MobileNetV2](https://img.shields.io/badge/MobileNetV2-Transfer_Learning-10B981?style=flat-square)](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![IndexedDB](https://img.shields.io/badge/Storage-IndexedDB_(100%25_Local)-8B5CF6?style=flat-square)](#veri-kalıcılığı-ve-gizlilik)
-[![Unit Tests](https://img.shields.io/badge/Vitest-111%2F111_Passed-22C55E?style=flat-square&logo=vitest&logoColor=white)](#test-ve-doğrulama)
-[![E2E Tests](https://img.shields.io/badge/Playwright_E2E-70%2F70_Passed-2EAD33?style=flat-square&logo=playwright&logoColor=white)](#test-ve-doğrulama)
-[![Dil Desteği](https://img.shields.io/badge/Dil-TR_%7C_EN-F59E0B?style=flat-square)](#özellikler)
+[![IndexedDB](https://img.shields.io/badge/Storage-IndexedDB_(100%25_Local)-8B5CF6?style=flat-square)](#data-persistence--privacy)
+[![Unit Tests](https://img.shields.io/badge/Vitest-111%2F111_Passed-22C55E?style=flat-square&logo=vitest&logoColor=white)](#testing--verification)
+[![E2E Tests](https://img.shields.io/badge/Playwright_E2E-70%2F70_Passed-2EAD33?style=flat-square&logo=playwright&logoColor=white)](#testing--verification)
+[![Localization](https://img.shields.io/badge/i18n-TR_%7C_EN-F59E0B?style=flat-square)](#key-features-3-stage-workflow)
 
 </div>
 
 ---
 
-## 📌 Proje Hakkında
+## 📌 Overview
 
-**Görsel Sınıflandırıcı Stüdyosu**, [Machine Learning for Kids](https://machinelearningforkids.co.uk/) üzerindeki *"Recognising Images"* deneyiminden ilham alınarak geliştirilmiş; hiçbir harici sunucu (backend), veritabanı veya API anahtarı gerektirmeden **tamamen kullanıcının web tarayıcısında (WebGL hızlandırmalı)** çalışan modern bir makine öğrenmesi eğitim ve prototipleme platformudur.
+**Image Classifier Studio** is an interactive, educational, and production-grade web application inspired by the *"Recognising Images"* workflow on [Machine Learning for Kids](https://machinelearningforkids.co.uk/). It runs **100% in the user's browser (WebGL-accelerated)** with zero external backend servers, databases, or API keys.
 
-Kullanıcılar kendi görsel veri setlerini kameradan, dosyadan veya çizim tuvalinden toplayabilir, **TensorFlow.js + MobileNetV2 Transfer Learning** ile saniyeler içinde tarayıcıda modellerini eğitebilir, gerçek zamanlı **Loss & Accuracy** grafiklerini izleyebilir ve eğittikleri modeli tek tıkla (`model.json` + `model.weights.bin` + hazır HTML/JS kodu) dışa aktarabilirler.
-
----
-
-## ✨ Temel Özellikler (3 Aşamalı İş Akışı)
-
-### 🗂️ Proje Paneli (Dashboard) ve Çoklu Dil (`TR / EN`)
-- Birden fazla görsel sınıflandırma projesi oluşturma, açma ve silme.
-- Her proje kartında etiket sayısı, toplam örnek sayısı ve model eğitim durumu özeti.
-- Üst menüden anlık **Türkçe (`TR`) / İngilizce (`EN`)** dil geçişi.
-
-### 1️⃣ Aşama 1: Eğit (`1. Train` — Veri Toplama)
-- **`+ Yeni Etiket Ekle`** ile sınırsız sınıf kutusu (bucket) oluşturma, yeniden adlandırma ve silme.
-- Her sınıfa **3 farklı kaynaktan** görsel ekleyebilme:
-  1. 📷 **Web Kamerası:** Tekli fotoğraf çekimi ve basılı tutarak seri çekim (**Burst Mode**).
-  2. 📁 **Dosya Yükleme / Sürükle-Bırak:** Bilgisayardan çoklu `JPG`, `PNG` ve `WebP` görselleri yükleme (`<= 320px` otomatik normalizasyon).
-  3. 🎨 **Çizim Pad'i (Drawing Pad):** Fare ile şekil çizip (fırça boyutu, renk, silgi desteğiyle) doğrudan eğitim örneği olarak ekleme.
-- Sınıf başına örnek sayacı, küçük önizleme (thumbnail) ızgarası, tekil örnek silme, **düşük örnek uyarısı (`< 5` görsel)** ve **dengesiz veri seti uyarısı**.
-
-### 2️⃣ Aşama 2: Öğren ve Test Et (`2. Learn & Test` — Eğitim ve Canlı Tahmin)
-- **Veri Seti Hazırlık Özeti:** Toplam sınıf ve örnek sayısı kontrolü, eksik/değişen veri seti durumunda yeniden eğitim uyarısı.
-- **Gelişmiş Ayarlar Paneli:** `Epoch Sayısı` (varsayılan: `20`), `Batch Boyutu` (varsayılan: `16`) ve `Öğrenme Oranı / Learning Rate` (varsayılan: `0.001`) yapılandırması.
-- **Canlı Telemetri Grafikleri:** Eğitim sırasında canlı ilerleme çubuğu, eğitimi durdurma (`AbortController`) ve gerçek zamanlı **Eğitim Kaybı (Loss)** & **Doğruluk (Accuracy)** SVG grafikleri.
-- **Canlı Test Alanı:** Eğitilen modeli **Canlı Kamera**, **Dosya Yükleme** veya **Çizim Pad'i** ile test etme ve tüm sınıflar için gerçek zamanlı güven oranlarını (**`% confidence`**) yatay çubuk grafik olarak izleme.
-
-### 3️⃣ Aşama 3: Üret (`3. Make` — Etkileşimli Alan ve Modeli Dışa Aktarma)
-- **Canlı Etkileşim Alanı (Mini Playground):** Eğitilen her sınıfa özel **ekran mesajı**, **arka plan/vurgu rengi**, **Web Audio ses efekti** (`Çan / Chime`, `Bip / Beep`, `Başarı / Success`, `Uyarı / Alert`, `Pıt / Pop`) ve **sayaç artırma** tepkisi tanımlama; tetikleme eşiği (`%`) belirleyip canlı kamerayla gerçek zamanlı kontrolcü olarak kullanma.
-- **TensorFlow.js Model Dışa Aktarma:**
-  - Tek tıkla `model.json` ve `model.weights.bin` dosyalarını indirme.
-  - Sınıflarınıza özel üretilen, **Canlı Kamera** ve **Görsel Seçme** destekli bağımsız HTML/JS örnek kodunu tek tıkla kopyalama (`http://` ve doğrudan çift tıklamalı `file://` modlarıyla uyumlu).
+Users can collect image datasets via webcam, file upload, or an interactive drawing pad, train custom image classification models in seconds using **TensorFlow.js + MobileNetV2 Transfer Learning**, monitor live **Loss & Accuracy** telemetry charts, test real-time inference, and export their trained models (`model.json` + `model.weights.bin` + standalone HTML/JS code) with a single click.
 
 ---
 
-## 🔒 Veri Kalıcılığı ve Gizlilik
+## ✨ Key Features (3-Stage Workflow)
 
-- **%100 Yerel Depolama (`IndexedDB`):** Yüklenen veya kamerayla çekilen hiçbir fotoğraf sunucuya gönderilmez. Tüm projeler, etiketler, görseller ve eğitilen model ağırlıkları kullanıcının kendi tarayıcısındaki `image-classifier-platform-db` IndexedDB veritabanında saklanır.
-- **WebGL Bellek Hijyeni:** Tüm öznitelik çıkarımı, eğitim ve tahmin adımlarında TensorFlow.js tensörleri `tf.tidy()` ve `tensor.dispose()` ile temizlenir; GPU/WebGL bellek sızıntısı oluşmaz.
+### 🗂️ Project Dashboard & Localization (`TR / EN`)
+- Create, open, and delete multiple image classification projects.
+- Project summary cards displaying label count, total sample count, and training status.
+- Instant **Turkish (`TR`) / English (`EN`)** language switcher in the top navigation bar with `localStorage` persistence.
+
+### 1️⃣ Stage 1: Train (Data Collection)
+- Create unlimited label buckets (`+ Add New Label`), rename labels inline, and delete buckets with confirmation.
+- Collect image examples per class using **3 capture modalities**:
+  1. 📷 **Webcam:** Single-shot photo capture and press-and-hold **Burst Mode**.
+  2. 📁 **File Upload / Drag-and-Drop:** Multi-file upload supporting `JPG`, `PNG`, and `WebP` (automatically normalized to `<= 320px`).
+  3. 🎨 **Drawing Pad:** Interactive canvas with pen, eraser, color palette, and brush size controls to draw shapes directly into a class bucket.
+- Per-label sample counter, thumbnail grid, individual sample deletion, **low-sample warning (`< 5` images)**, and **dataset imbalance detection**.
+
+### 2️⃣ Stage 2: Learn & Test (In-Browser Training & Live Inference)
+- **Dataset Readiness Summary:** Validates class and sample counts and displays a stale-model warning whenever labels or samples change after training.
+- **Collapsible Advanced Settings:** Configure `Epochs` (default: `20`), `Batch Size` (default: `16`), and `Learning Rate` (default: `0.001`) with inline validation and one-click reset.
+- **Real-Time Telemetry Charts:** Live progress bar, mid-training cancellation (`AbortController`), and pure-SVG real-time **Training Loss** & **Training Accuracy** charts.
+- **Live Test Area:** Run real-time inference via **Live Webcam**, **File Upload**, or **Drawing Pad** and inspect sorted horizontal **`% confidence`** bars for all classes.
+
+### 3️⃣ Stage 3: Make (Interactive Playground & Model Export)
+- **Live Action Playground:** Assign custom reactions to each trained class — **on-screen message**, **background/accent color**, **Web Audio synthesized sound effect** (`Chime`, `Beep`, `Success`, `Alert`, `Pop`), and **counter increment** — and test the model as a real-time controller with a configurable confidence threshold (`%`).
+- **One-Click TensorFlow.js Model Export:**
+  - Download `model.json` and `model.weights.bin` directly from the browser.
+  - Copy a ready-to-run standalone HTML/JS snippet tailored to your trained classes, featuring both **Live Webcam** and **Image File** classification (compatible with both HTTP servers and direct `file://` double-click usage via `tf.io.browserFiles`).
 
 ---
 
-## 🏗️ Mimari ve Klasör Yapısı
+## 🔒 Data Persistence & Privacy
+
+- **100% Local Browser Storage (`IndexedDB`):** No uploaded or captured photos ever leave the user's device. All projects, label buckets, image samples, and trained classification head weights are stored locally in the browser's `image-classifier-platform-db` IndexedDB database.
+- **Strict WebGL Memory Hygiene:** Every feature extraction, training, and inference operation cleans up intermediate tensors using `tf.tidy()` and explicit `.dispose()` calls in `finally` blocks, preventing WebGL texture and GPU memory leaks.
+
+---
+
+## 🏗️ Architecture & Project Structure
 
 ```text
 image_classifier_platform/
 ├── public/
 │   └── models/
-│       └── mobilenet_v2_1.0_224/    # Yerel barındırılan MobileNetV2 (model.json + 4 ağırlık parçası)
+│       └── mobilenet_v2_1.0_224/    # Self-hosted MobileNetV2 (model.json + 4 binary weight shards)
 ├── src/
-│   ├── types/                       # Domain, ML ve i18n TypeScript tip sözleşmeleri
-│   ├── i18n/                        # TR / EN dil sözlükleri ve I18nProvider
-│   ├── storage/                     # IndexedDB şeması (db.ts) ve atomik CRUD (projectRepository.ts)
-│   ├── media/                       # Görsel normalizasyon, kamera servisi ve Web Audio ses sentezleyici
-│   ├── ml/                          # WebGL/CPU backend, MobileNetV2 yükleyici, TransferClassifier, Exporter
-│   ├── hooks/                       # React durum ve eğitim oturumu hook'ları
-│   └── components/                  # Dashboard, 1. Eğit, 2. Öğren ve Test Et, 3. Üret arayüz bileşenleri
+│   ├── types/                       # Domain, ML, and i18n TypeScript interfaces
+│   ├── i18n/                        # TR / EN translation dictionaries and I18nProvider
+│   ├── storage/                     # IndexedDB schema (db.ts) and atomic cascade CRUD (projectRepository.ts)
+│   ├── media/                       # Image normalization, webcam service, and Web Audio synthesizer
+│   ├── ml/                          # WebGL/CPU backend probe, MobileNetV2 loader, TransferClassifier, Exporter
+│   ├── hooks/                       # React workspace state and training session hooks
+│   └── components/                  # Dashboard, Stage 1 (Train), Stage 2 (Learn & Test), Stage 3 (Make) UI
 ├── tests/
-│   └── unit/                        # 10 test dosyası / 111 Vitest birim testi
-└── e2e/                             # 4 katmanlı / 70 senaryoluk Playwright tarayıcı E2E test paketi
+│   └── unit/                        # 10 unit test suites / 111 Vitest unit tests
+└── e2e/                             # 4-tier / 70-scenario Playwright browser E2E test suite
 ```
 
 ---
 
-## 🚀 Kurulum ve Çalıştırma
+## 🚀 Getting Started
 
-### Gereksinimler
-- **Node.js** `>= 20` ve **npm**
+### Prerequisites
+- **Node.js** `>= 20` and **npm**
 
-### Yerel Geliştirme Sunucusu
+### Local Development
 
 ```bash
-# Bağımlılıkları yükleyin
+# Install dependencies
 npm install
 
-# Geliştirme sunucusunu başlatın (http://localhost:5173)
+# Start Vite development server (http://localhost:5173)
 npm run dev
 ```
 
-### Üretim Derlemesi (Production Build)
+### Production Build
 
 ```bash
-# TypeScript tip kontrolü + Vite üretim derlemesi (dist/)
+# Run TypeScript typecheck and build production bundle into dist/
 npm run build
 
-# Üretim derlemesini yerel olarak önizleyin (http://127.0.0.1:4173)
+# Preview production build locally (http://127.0.0.1:4173)
 npm run preview
 ```
 
 ---
 
-## 🧪 Test ve Doğrulama
+## 🧪 Testing & Verification
 
 ```bash
-# ESLint statik kod analizi
+# Run ESLint static analysis
 npm run lint
 
-# Vitest birim testleri (111 birim testi)
+# Run Vitest unit test suite (111 unit tests)
 npm test
 
-# Playwright uçtan uca tarayıcı testleri (70 E2E testi — sıfır konsol hatası doğrulamalı)
+# Run Playwright end-to-end browser test suite (70 E2E tests with zero-console-error harness)
 npm run test:e2e
 ```
 
@@ -132,6 +132,6 @@ npm run test:e2e
 
 <div align="center">
 
-© 2025–2026 [hamzafpv.com.tr](https://hamzafpv.com.tr) • Tüm hakları saklıdır.
+© 2025–2026 [hamzafpv.com.tr](https://hamzafpv.com.tr) • All rights reserved.
 
 </div>
