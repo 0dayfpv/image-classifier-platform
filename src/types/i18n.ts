@@ -1,0 +1,253 @@
+export type Locale = 'tr' | 'en';
+
+export type TranslationParams = Record<string, string | number>;
+
+export interface TranslationDictionary {
+  common: {
+    appName: string;
+    cancel: string;
+    confirm: string;
+    save: string;
+    delete: string;
+    rename: string;
+    close: string;
+    back: string;
+    next: string;
+    loading: string;
+    dismiss: string;
+    yes: string;
+    no: string;
+    confirmDeleteTitle: string;
+  };
+  nav: {
+    brandTitle: string;
+    brandSubtitle: string;
+    myProjects: string;
+    languageLabel: string;
+    langTr: string;
+    langEn: string;
+    switchToTr: string;
+    switchToEn: string;
+    localStorageBadge: string;
+    backToDashboard: string;
+    stageStepperLabel: string;
+  };
+  stages: {
+    trainTitle: string;
+    trainShort: string;
+    trainSubtitle: string;
+    learnTitle: string;
+    learnShort: string;
+    learnSubtitle: string;
+    makeTitle: string;
+    makeShort: string;
+    makeSubtitle: string;
+    goToTrain: string;
+    goToLearn: string;
+    goToMake: string;
+  };
+  dashboard: {
+    heading: string;
+    subheading: string;
+    createProjectBtn: string;
+    modalTitle: string;
+    projectNameLabel: string;
+    projectNamePlaceholder: string;
+    createSubmit: string;
+    openProject: string;
+    deleteProject: string;
+    deleteConfirmMessage: string;
+    emptyStateTitle: string;
+    emptyStateBody: string;
+    summaryBadge: string;
+    projectTypeBadge: string;
+    lastUpdated: string;
+    trainedBadge: string;
+    untrainedBadge: string;
+    projectNotFound: string;
+  };
+  train: {
+    heading: string;
+    recognisingSummary: string;
+    emptyBucketsTitle: string;
+    emptyBucketsBody: string;
+    addLabelBtn: string;
+    newLabelModalTitle: string;
+    labelNameLabel: string;
+    labelNamePlaceholder: string;
+    createLabelSubmit: string;
+    renameLabelBtn: string;
+    renameSaveBtn: string;
+    deleteLabelBtn: string;
+    deleteLabelConfirm: string;
+    sampleCount: string;
+    noSamplesYet: string;
+    deleteSampleAria: string;
+    webcamBtn: string;
+    uploadBtn: string;
+    drawingBtn: string;
+    dropzonePrompt: string;
+    dropzoneActive: string;
+    lowSampleWarning: string;
+    imbalanceWarning: string;
+    imbalanceDetail: string;
+    webcamModalTitle: string;
+    webcamConnecting: string;
+    webcamDeviceLabel: string;
+    webcamSwitchCamera: string;
+    webcamTakePhoto: string;
+    webcamHoldBurst: string;
+    webcamBurstActive: string;
+    webcamCapturedFeedback: string;
+    drawingModalTitle: string;
+    drawingPenTool: string;
+    drawingEraserTool: string;
+    drawingClearBtn: string;
+    drawingBrushSize: string;
+    drawingColorLabel: string;
+    drawingAddSampleBtn: string;
+    drawingAutoClear: string;
+    proceedToLearn: string;
+  };
+  learn: {
+    heading: string;
+    datasetSummaryHeading: string;
+    totalClassesLabel: string;
+    totalSamplesLabel: string;
+    readyToTrainMessage: string;
+    needTwoClassesWarning: string;
+    noLabelsWarning: string;
+    emptyClassWarning: string;
+    lowSampleAdvisory: string;
+    staleModelBanner: string;
+    trainModelBtn: string;
+    retrainModelBtn: string;
+    cancelTrainingBtn: string;
+    advancedSettingsToggle: string;
+    epochsLabel: string;
+    epochsHelp: string;
+    batchSizeLabel: string;
+    batchSizeHelp: string;
+    learningRateLabel: string;
+    learningRateHelp: string;
+    resetDefaultsBtn: string;
+    statusIdle: string;
+    statusLoadingBackbone: string;
+    statusExtractingFeatures: string;
+    statusTraining: string;
+    statusCompleted: string;
+    statusCancelled: string;
+    statusError: string;
+    backendLabel: string;
+    chartsHeading: string;
+    lossChartTitle: string;
+    accuracyChartTitle: string;
+    lossLegend: string;
+    valLossLegend: string;
+    accuracyLegend: string;
+    valAccuracyLegend: string;
+    epochAxisLabel: string;
+    latestLoss: string;
+    latestAccuracy: string;
+    chartEmptyPrompt: string;
+    chartInterpretationTip: string;
+    liveTestHeading: string;
+    liveTestUntrainedPrompt: string;
+    tabWebcam: string;
+    tabUpload: string;
+    tabDrawing: string;
+    startLiveTest: string;
+    stopLiveTest: string;
+    classifyBtn: string;
+    uploadTestPrompt: string;
+    predictedClassLabel: string;
+    confidenceHeader: string;
+    confidencePercent: string;
+    noPredictionYet: string;
+  };
+  make: {
+    heading: string;
+    untrainedGuard: string;
+    reactionConfigHeading: string;
+    customMessageLabel: string;
+    customMessagePlaceholder: string;
+    backgroundColorLabel: string;
+    accentColorLabel: string;
+    soundEffectLabel: string;
+    soundNone: string;
+    soundChime: string;
+    soundBeep: string;
+    soundSuccess: string;
+    soundAlert: string;
+    soundPop: string;
+    testSoundBtn: string;
+    enableCounterLabel: string;
+    playgroundHeading: string;
+    thresholdLabel: string;
+    resetCountersBtn: string;
+    counterValue: string;
+    waitingForTrigger: string;
+    belowThresholdStatus: string;
+    triggeredStatus: string;
+    testReactionBtn: string;
+    startLiveController: string;
+    stopLiveController: string;
+    exportHeading: string;
+    exportDescription: string;
+    downloadModelBtn: string;
+    downloadingModel: string;
+    downloadSuccess: string;
+    snippetHeading: string;
+    copySnippetBtn: string;
+    copiedFeedback: string;
+    exportGuideHeading: string;
+    exportStep1: string;
+    exportStep2: string;
+    exportStep3: string;
+  };
+  validation: {
+    projectNameRequired: string;
+    projectNameTooLong: string;
+    labelNameRequired: string;
+    labelNameTooLong: string;
+    labelDuplicate: string;
+    invalidEpochs: string;
+    invalidBatchSize: string;
+    invalidLearningRate: string;
+    blankCanvas: string;
+  };
+  errors: {
+    unsupportedFileType: string;
+    imageLoadFailed: string;
+    webcamPermissionDenied: string;
+    webcamNotFound: string;
+    webcamInUse: string;
+    webcamUnsupported: string;
+    storageQuotaExceeded: string;
+    storageUnavailable: string;
+    mobilenetLoadFailed: string;
+    trainingNanLoss: string;
+    trainingFailed: string;
+    predictionFailed: string;
+    exportFailed: string;
+    clipboardFailed: string;
+  };
+}
+
+export type DotNestedKeys<T> = T extends string
+  ? never
+  : {
+      [K in Extract<keyof T, string>]: T[K] extends string
+        ? K
+        : `${K}.${DotNestedKeys<T[K]>}`;
+    }[Extract<keyof T, string>];
+
+export type TranslationKey = DotNestedKeys<TranslationDictionary>;
+
+export type TranslateFn = (key: TranslationKey, params?: TranslationParams) => string;
+
+export interface I18nContextValue {
+  locale: Locale;
+  setLocale: (locale: Locale) => void;
+  t: TranslateFn;
+}

@@ -1,0 +1,1 @@
+Not a valid image file for E2E negative upload test.
