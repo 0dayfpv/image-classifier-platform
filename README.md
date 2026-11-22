@@ -89,20 +89,28 @@ image_classifier_platform/
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Local Installation & Development
 
-### Prerequisites
-- **Node.js** `>= 20` and **npm**
+> **Just want to try it without installing anything?** Open the live web app directly at **[ml.hamzafpv.com.tr](https://ml.hamzafpv.com.tr)**.
 
-### Local Development
+### Dependencies
+
+- [Git](https://git-scm.com/downloads)
+- [Node.js 20+](https://nodejs.org/) *(includes `npm`)*
+
+### Run Locally
+
+Clone the repository, install dependencies, and start the dev server:
 
 ```bash
-# Install dependencies
+git clone https://github.com/0dayfpv/image-classifier-platform.git
+cd image-classifier-platform
 npm install
-
-# Start Vite development server (http://localhost:5173)
 npm run dev
 ```
+
+- Self-hosted MobileNetV2 weights are already bundled in `public/models/mobilenet_v2_1.0_224/` (no external model download required).
+- Open **`http://localhost:5173`** in your browser.
 
 ### Production Build
 
